@@ -5,7 +5,6 @@ import {
     StyleSheet,
     Image,
     TouchableOpacity,
-    ScrollView,
     FlatList,
     Dimensions,
 } from "react-native";
@@ -235,7 +234,7 @@ const styles = StyleSheet.create({
     },
 
     activeDot: {
-        backgroundColor: "#615447",
+        backgroundColor: "#d6be6d",
         width: 10,
         height: 10,
     },
