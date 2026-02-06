@@ -1,10 +1,12 @@
-import {View, Text} from 'react-native'
+import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
+import {Stack} from "expo-router";
 
 export default function _Layout() {
     return (
-        <View>
-            <Text>_Layout</Text>
-        </View>
+           <Stack>
+               <Stack.Screen name="logsign" options={{ headerShown: false }} />
+           </Stack>
     )
 }
+const styles = StyleSheet.create({})
