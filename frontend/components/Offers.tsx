@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#DDDFD4",
         paddingHorizontal: 16,
         paddingTop: 20,
-        marginTop:100,
+        marginTop:70,
     },
 
     sectionHeader: {

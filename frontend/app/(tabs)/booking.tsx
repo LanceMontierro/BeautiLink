@@ -83,11 +83,11 @@ export default function BookingScreen() {
                     markedDates={{
                         [date]: {
                             selected: true,
-                            selectedColor: "#9A8A4B",
+                            selectedColor: "#dbbe54",
                         },
                     }}
                     theme={{
-                        calendarBackground: "#FFFFFF",
+                        calendarBackground: "#F7F7F0",
                         todayTextColor: "#2F4A33",
                         dayTextColor: "#2E2416",
                         monthTextColor: "#2E2416",
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     card: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#F7F7F0",
         borderRadius: 22,
         padding: 20,
         elevation: 6,
