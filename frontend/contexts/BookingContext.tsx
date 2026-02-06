@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-/* ===== Booking Type ===== */
 export type Booking = {
     customer: string;
     service: string;
@@ -8,19 +7,16 @@ export type Booking = {
     time: string;
 };
 
-/* ===== Context Type ===== */
 type BookingContextType = {
     bookings: Booking[];
     addBooking: (booking: Booking) => void;
     clearBookings: () => void;
 };
 
-/* ===== Create Context ===== */
 const BookingContext = createContext<BookingContextType | undefined>(
     undefined
 );
 
-/* ===== Provider ===== */
 export const BookingProvider = ({ children }: { children: ReactNode }) => {
     const [bookings, setBookings] = useState<Booking[]>([]);
 
@@ -45,7 +41,6 @@ export const BookingProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
-/* ===== Hook ===== */
 export const useBooking = () => {
     const context = useContext(BookingContext);
 
