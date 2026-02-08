@@ -15,42 +15,42 @@ export default function UserProfileScreen() {
   const { handleSignOut, user } = useGlobalContext();
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <StatusBar barStyle="dark-content" />
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <StatusBar barStyle="dark-content" />
 
-      <View style={styles.header}>
-        <Image
-          source={{
-            uri:
-              user?.imageUrl ||
-              "https://img.freepik.com/free-vector/woman-with-long-brown-hair-pink-shirt_90220-2940.jpg?semt=ais_hybrid&w=740&q=80",
-          }}
-          style={styles.avatar}
-        />
-        <Text style={styles.userName}>{user?.firstName || null}</Text>
-        <Text style={styles.membership}>Member</Text>
-      </View>
+        <View style={styles.header}>
+          <Image
+              source={{
+                uri:
+                    user?.imageUrl ||
+                    "https://img.freepik.com/free-vector/woman-with-long-brown-hair-pink-shirt_90220-2940.jpg?semt=ais_hybrid&w=740&q=80",
+              }}
+              style={styles.avatar}
+          />
+          <Text style={styles.userName}>{user?.firstName || null}</Text>
+          <Text style={styles.membership}>Member</Text>
+        </View>
 
-      <View style={styles.menuCard}>
-        <ProfileRow title="My Appointments" />
-        <ProfileRow title="Favorite Stylists" />
-        <ProfileRow title="Payment Methods" />
-        <ProfileRow title="Settings" />
-      </View>
+        <View style={styles.menuCard}>
+          <ProfileRow title="My Appointments" />
+          <ProfileRow title="Favorite Stylists" />
+          <ProfileRow title="Payment Methods" />
+          <ProfileRow title="Settings" />
+        </View>
 
-      <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
-        <Text style={styles.logoutText}>Log Out</Text>
-      </TouchableOpacity>
-    </ScrollView>
+        <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
+          <Text style={styles.logoutText}>Log Out</Text>
+        </TouchableOpacity>
+      </ScrollView>
   );
 }
 
 function ProfileRow({ title }) {
   return (
-    <TouchableOpacity style={styles.row}>
-      <Text style={styles.rowText}>{title}</Text>
-      <Text style={styles.rowArrow}>›</Text>
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.row}>
+        <Text style={styles.rowText}>{title}</Text>
+        <Text style={styles.rowArrow}>›</Text>
+      </TouchableOpacity>
   );
 }
 

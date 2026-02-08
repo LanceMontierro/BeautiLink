@@ -88,86 +88,86 @@ export default function AuthScreen() {
   // }
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" />
 
-      <View style={styles.header}>
-        <Text style={styles.title}>BeautiLink</Text>
-        <Text style={styles.subtitle}>Beauty. Relax. Repeat.</Text>
+        <View style={styles.header}>
+          <Text style={styles.title}>BeautiLink</Text>
+          <Text style={styles.subtitle}>Beauty. Relax. Repeat.</Text>
+        </View>
+
+        <View style={styles.card}>
+          {!showAdmin ? (
+              <>
+                <Text style={styles.cardTitle}>Continue with</Text>
+
+                <TouchableOpacity
+                    style={styles.googleButton}
+                    activeOpacity={0.85}
+                    onPress={handleGoogleLogin}
+                >
+                  <Text style={styles.buttonText}>Google</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.facebookButton}
+                    activeOpacity={0.85}
+                    onPress={handleFacebookLogin}
+                >
+                  <Text style={styles.buttonText}>Facebook</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => setShowAdmin(true)}
+                    style={styles.adminLink}
+                >
+                  <Text style={styles.adminText}>Admin Login</Text>
+                </TouchableOpacity>
+              </>
+          ) : (
+              <>
+                <Text style={styles.cardTitle}>Admin Access</Text>
+
+                <TextInput
+                    placeholder="Username or Email"
+                    placeholderTextColor="#9A8A4B"
+                    style={styles.input}
+                    value={username}
+                    onChangeText={setUsername}
+                    autoCapitalize="none"
+                />
+
+                <TextInput
+                    placeholder="Password"
+                    placeholderTextColor="#9A8A4B"
+                    style={styles.input}
+                    value={password}
+                    onChangeText={setPassword}
+                    secureTextEntry
+                />
+
+                <TouchableOpacity
+                    style={styles.adminButton}
+                    onPress={handleAdminLogin}
+                >
+                  <Text style={styles.buttonText}>Log In</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => setShowAdmin(false)}
+                    style={styles.adminLink}
+                >
+                  <Text style={styles.adminText}>Back to User Login</Text>
+                </TouchableOpacity>
+              </>
+          )}
+
+          <Text style={styles.footerText}>
+            By continuing, you agree to our{" "}
+            <Text style={styles.link}>Terms & Privacy Policy</Text>
+          </Text>
+        </View>
       </View>
-
-      <View style={styles.card}>
-        {!showAdmin ? (
-          <>
-            <Text style={styles.cardTitle}>Continue with</Text>
-
-            <TouchableOpacity
-              style={styles.googleButton}
-              activeOpacity={0.85}
-              onPress={handleGoogleLogin}
-            >
-              <Text style={styles.buttonText}>Google</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={styles.facebookButton}
-              activeOpacity={0.85}
-              onPress={handleFacebookLogin}
-            >
-              <Text style={styles.buttonText}>Facebook</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => setShowAdmin(true)}
-              style={styles.adminLink}
-            >
-              <Text style={styles.adminText}>Admin Login</Text>
-            </TouchableOpacity>
-          </>
-        ) : (
-          <>
-            <Text style={styles.cardTitle}>Admin Access</Text>
-
-            <TextInput
-              placeholder="Username or Email"
-              placeholderTextColor="#9A8A4B"
-              style={styles.input}
-              value={username}
-              onChangeText={setUsername}
-              autoCapitalize="none"
-            />
-
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="#9A8A4B"
-              style={styles.input}
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-            />
-
-            <TouchableOpacity
-              style={styles.adminButton}
-              onPress={handleAdminLogin}
-            >
-              <Text style={styles.buttonText}>Log In</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => setShowAdmin(false)}
-              style={styles.adminLink}
-            >
-              <Text style={styles.adminText}>Back to User Login</Text>
-            </TouchableOpacity>
-          </>
-        )}
-
-        <Text style={styles.footerText}>
-          By continuing, you agree to our{" "}
-          <Text style={styles.link}>Terms & Privacy Policy</Text>
-        </Text>
-      </View>
-    </View>
   );
 }
 

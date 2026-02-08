@@ -24,9 +24,9 @@ const ContextProvider = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider value={{ user, handleSignOut }}>
-      {children}
-    </GlobalContext.Provider>
+      <GlobalContext.Provider value={{ user, handleSignOut }}>
+        {children}
+      </GlobalContext.Provider>
   );
 };
 
