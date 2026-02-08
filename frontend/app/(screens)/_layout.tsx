@@ -6,6 +6,8 @@ export default function _Layout() {
     return (
            <Stack>
                <Stack.Screen name="logsign" options={{ headerShown: false }} />
+               <Stack.Screen name="notificationScreen" options={{ headerShown: false }} />
+               <Stack.Screen name="servicesScreen" options={{ headerShown: false }} />
            </Stack>
     )
 }

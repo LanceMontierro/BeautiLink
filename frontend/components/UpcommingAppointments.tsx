@@ -74,9 +74,6 @@ export default function UpcomingAppointments() {
 
             <View style={styles.header}>
                 <Text style={styles.title}>Upcoming Appointments</Text>
-                <TouchableOpacity>
-                    <Text style={styles.seeAll}>See All</Text>
-                </TouchableOpacity>
             </View>
 
             <FlatList
@@ -92,7 +89,7 @@ export default function UpcomingAppointments() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 28,
-        paddingTop: 20,
+        paddingTop: 10,
     },
 
     header: {
