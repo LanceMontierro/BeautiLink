@@ -8,10 +8,12 @@ export default function RootLayout() {
 
 
   return (
-        <Stack initialRouteName={"(AdminScreen)"}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <BookingProvider>
+        <Stack initialRouteName={"(screens)"}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="(screens)" options={{ headerShown: false }} />
-            <Stack.Screen name="(AdminScreen)" options={{ headerShown: false }} />
         </Stack>
+        <StatusBar style="auto" />
+      </BookingProvider>
   );
 }
